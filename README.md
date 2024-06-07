@@ -14,7 +14,7 @@ O "Clean Boarding" propõe um sistema integrado de monitoramento e tratamento da
 ## 🛠 Tecnologias Utilizadas
 
 - **Gradle**: Ferramenta de automação de builds que permite compilar, testar, implantar e empacotar o código de maneira eficiente.
-- **JDK 21 ou JDK 17**: Java Development Kit, necessário para compilar e executar a aplicação.
+- **JDK 17+**: Java Development Kit, necessário para compilar e executar a aplicação.
 
   
 ## 🚀 Instalação e Execução
@@ -22,7 +22,7 @@ O "Clean Boarding" propõe um sistema integrado de monitoramento e tratamento da
 Antes de iniciar, você precisa ter instalado em sua máquina:
 
 - **Gradle**: [Baixar Gradle](https://gradle.org/install/https://gradle.org/install/)
-- **JDK 21 ou JDK 17**: [Baixar JDK](https://www.oracle.com/br/java/technologies/downloads/)
+- **JDK**: [Baixar JDK](https://www.oracle.com/br/java/technologies/downloads/)
   
 ### 🚀 Passos para Executar a Aplicação
 Para executar o projeto, siga estas etapas:
