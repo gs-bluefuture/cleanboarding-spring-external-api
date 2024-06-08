@@ -1,84 +1,70 @@
 # Clean Boarding 🚢
 
 ## 📌 Overview
-A economia azul emergente exige soluções inovadoras para garantir que as atividades humanas nos oceanos sejam ecologicamente responsáveis, socialmente inclusivas e economicamente viáveis. O projeto "Clean Boarding" visa enfrentar um dos maiores desafios ambientais nos oceanos: o monitoramento e tratamento dos lastros e deslastros dos navios, prevenindo bioinvasões, problemas ambientais e riscos à saúde pública.
+"Clean Boarding" é uma solução inovadora projetada para melhorar a gestão da água de lastro em navios, visando prevenir bioinvasões que podem causar danos significativos aos ecossistemas marinhos. Este projeto utiliza tecnologia de ponta para monitorar, tratar e realizar o deslastro de água de maneira segura e eficiente.
 
-## 🚀 **A Solução**
-
-O "Clean Boarding" propõe um sistema integrado de monitoramento e tratamento da água de lastro que utiliza tecnologias avançadas para:
-
-1. **Monitoramento em Tempo Real**: Sensores IoT e inteligência artificial para monitorar a qualidade da água de lastro em tempo real.
-2. **Inteligência de Machine Learning:** IA que será utilizada para criar as melhores estratégias de lastro e deslastro dos navios a partir de suas condições expostas pelo monitoramento.
-3. **Deslastro Seguro**: Deslastrar a água tratada fora do território marítimo do país, mas de forma legal e segura, prevenindo a introdução de espécies invasoras nas águas territoriais.
+## 🚀 Solução
+A solução "Clean Boarding" inclui:
+- **Monitoramento em Tempo Real:** Utilização de sensores IoT para monitorar continuamente a qualidade da água de lastro e detectar quaisquer sinais de contaminação ou presença de organismos invasores.
+- **Tratamento Eficiente:** Aplicação de tecnologias avançadas para neutralizar organismos nocivos antes que a água seja descarregada.
+- **Deslastro Seguro:** Liberação da água tratada em áreas aprovadas e seguras, longe das zonas costeiras, para evitar impactos ambientais adversos.
 
 ## 🛠 Tecnologias Utilizadas
+- **Spring Data JPA:** Utilizado para simplificar a integração com o banco de dados Oracle, facilitando operações CRUD (Create, Read, Update, Delete).
+- **Java:** A linguagem principal do projeto, utilizada para desenvolver a lógica de negócios e a interação com os diversos componentes do sistema.
+- **Oracle:** Banco de dados relacional escolhido para armazenar os dados de monitoramento e histórico do lastro dos navios, garantindo confiabilidade e performance.
+- **Grafana:** Ferramenta de monitoramento e visualização de dados, utilizada para criar dashboards interativos que exibem informações em tempo real sobre a qualidade da água de lastro e o status dos tratamentos realizados.
+- **Spring Framework:** Framework utilizado para a construção de aplicações robustas e escaláveis, oferecendo suporte para injeção de dependências, segurança, configuração, e mais.
+- **Spring Boot:** Extensão do Spring Framework que facilita a criação de aplicações standalone e de produção com configurações mínimas.
 
-- **Gradle**: Ferramenta de automação de builds que permite compilar, testar, implantar e empacotar o código de maneira eficiente.
-- **JDK 17+**: Java Development Kit, necessário para compilar e executar a aplicação.
+## 🔧 Instalação e Execução
 
-  
-## 🚀 Instalação e Execução
 ### Pré-requisitos
-Antes de iniciar, você precisa ter instalado em sua máquina:
+Antes de iniciar, você precisa ter instalado em sua máquina as seguintes ferramentas:
+- SDK 21
+- Gradle JVM
 
-- **Gradle**: [Baixar Gradle](https://gradle.org/install/https://gradle.org/install/)
-- **JDK**: [Baixar JDK](https://www.oracle.com/br/java/technologies/downloads/)
-  
-### 🚀 Passos para Executar a Aplicação
+### 🚀 Rodando o Projeto
 Para executar o projeto, siga estas etapas:
 
-1. Clone o repositório do projeto para a sua máquina local:
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/gs-bluefuture/cleanboarding-spring-shipmonitoring.git
+   git clone https://github.com/gs-bluefuture/cleanboarding-spring-external-api.git
+2. Clique no Link para enchaminhar para o Swagger:
+   ```bash 
+   http://localhost:8081/swagger-ui/index.html
+2. Clique no Link da aplicação com o Deploy:
+   ```bash 
+     https://clean-boarding-monitoring.azurewebsites.net/swagger-ui/index.html#/ 
+4. Execute as requisições via Swagger   
+### 🚀 Requisições via Postamn 
+https://external-api-clean-boarding.azurewebsites.net/api/movements  (GET)  
+https://clean-boarding-monitoring.azurewebsites.net/update (POST)  
+https://clean-boarding-monitoring.azurewebsites.net/ships (GET)  
+https://clean-boarding-monitoring.azurewebsites.net/ships (POST)  
+Body:  
+{  
+  "shipId": 1,  
+  "name": "Ship A",  
+  "shipType": "Transporte",  
+  "ballastCapacity": 10000  
+}  
 
-```bash
-  git clone https://github.com/seu-usuario/seu-repositorio.git
-  cd seu-repositorio
-```
-
-2. Verifique a Instalação do Gradle e do JDK
-
-Certifique-se de que o Gradle e o JDK estão corretamente instalados e configurados em seu PATH:
-
-```bash
-  gradle -v
-  java -version
-```
-
-3. Compilar o Projeto
-
-Navegue até o diretório do projeto e execute o comando para compilar a aplicação:
-
-```bash
-  gradle build
-```
-4. Executar a Aplicação
-
-Após a compilação bem-sucedida, execute a aplicação com o seguinte comando:
-
-```bash
-  gradle run
-```
-
-5. Testar a Aplicação
-
-Para executar os testes da aplicação e garantir que tudo está funcionando corretamente, utilize o comando:
-
-```bash
-gradle test
-```
-
-## 📂 Estrutura do Projeto
-O projeto está estruturado da seguinte forma:
-
-```css
-.
-├── src
-│   ├── main
-│   │   ├── java
-│   │   └── resources
-│   ├── test
-│   │   ├── java
-│   │   └── resources
-├── build.gradle
-├── settings.gradle
-└── README.md
-```
+Para executar as requisições é necessário se autenticar:
+- **Basic Auth**
+  - **Username:** rm96920
+  - **Senha:** 080903  
+Para executar a api de Update:
+- **Basic Auth**
+  - **Username:** admin
+  - **Senha:** admin
+### Aplicação grafana com dashboards
+![Descrição da Imagem](https://i.imgur.com/v9afiqw.png)
+![Descrição da Imagem](https://i.imgur.com/0sUowDB.png)
+### 🚀 Link do video Pitch e da aplicação rodando:
+   ```bash
+         Video da aplicação: https://youtu.be/k2M67QmeYHQ
+         Video confirmando que houve o Deploy: https://youtu.be/MFnlWymMPUU
+         Video Pitch: https://drive.google.com/file/d/1pxPre33uC7zi0iCRKyOSQc9E7UC25Nte/view?usp=sharing
+         Video Pitch Youtube: https://youtu.be/fIOZVhTXK9Y
